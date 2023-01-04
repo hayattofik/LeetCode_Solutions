@@ -6,7 +6,7 @@ class Solution:
     #         return False
     def countPairs(self, deliciousness: List[int]) -> int:
         count = 0
-        for power in range(41):
+        for power in range(22):
             checkD=defaultdict(int)
             
             target = 2 **power
