@@ -6,15 +6,15 @@
 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        checkCycle= defaultdict(int)
+        checkCycle=set()
        
         cur = head 
         check = 0
         while cur:
-            if checkCycle[cur] < 1:
-                checkCycle[cur]+=1
+            if cur not in checkCycle:
+                checkCycle.add(cur)
             else:
-                check = cur 
+                
                 return cur
             cur = cur.next
        
