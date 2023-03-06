@@ -3,12 +3,15 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        start = 0
-        end = len(s) -1
         
-        while(start<end):
-            s[start],s[end] = s[end],s[start]
-            start +=1
-            end -=1
-        return s
+        def helper(r,l,s):
+            if l > r:
+                return s
+            s[l],s[r] = s[r],s[l]
+            
+            return helper(r-1,l+1,s)
+            
         
+       
+        helper(len(s)-1,0,s)
+    
