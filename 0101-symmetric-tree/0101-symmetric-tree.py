@@ -26,18 +26,18 @@ class Solution:
             if root is None:
                 return True
             else:
-                return self.isMirror(root.left, root.right)
+                return self.helper(root.left, root.right)
 
-    def isMirror(self, left, right):
+    def helper(self, left, right):
         if left is None and right is None:
             return True
         if left is None or right is None:
             return False
 
         if left.val == right.val:
-            outPair = self.isMirror(left.left, right.right)
-            inPiar = self.isMirror(left.right, right.left)
-            return outPair and inPiar
+            RightCheck = self.helper(left.left, right.right)
+            LeftCheck = self.helper(left.right, right.left)
+            return RightCheck and LeftCheck
         else:
             return False
 
