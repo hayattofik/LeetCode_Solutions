@@ -6,7 +6,7 @@ class Solution:
             mid = (left + right) // 2
             h = citations[mid]
             if h == n - mid:
-                return n - mid
+                return h
             elif h < n - mid:
                 left = mid + 1
             else:
