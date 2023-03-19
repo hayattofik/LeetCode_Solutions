@@ -26,9 +26,3 @@ class Solution(object):
           
            
         return Area
-
-            
-                
-            
-            
-        
