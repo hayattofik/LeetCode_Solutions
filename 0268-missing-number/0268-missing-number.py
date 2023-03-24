@@ -1,15 +1,26 @@
-class Solution(object):
-    def missingNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        self.output=-1
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        pivot = 0
         
-        for i in range(len(nums)+1):
-            if i in nums:
-                continue
+        n = len(nums)
+        if n not in nums:
+            return n
+        
+        while(pivot < len(nums)):
+            if nums[pivot] != pivot:
+                # temp = 
+                if nums[pivot] < len(nums):
+
+                    nums[nums[pivot]],nums[pivot] = nums[pivot],nums[nums[pivot]]
+                else:
+                    pivot +=1
+            # else:
             else:
-                self.output=i
+                pivot +=1
+      
+        for i in range(len(nums)):
+           
+            if i != nums[i]:
                 
-        return self.output
+                return i
+            
